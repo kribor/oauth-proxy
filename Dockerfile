@@ -1,6 +1,6 @@
 FROM fareoffice/python3
 
-LABEL com.oath-proxy.version="0.1s"
+LABEL com.oath-proxy.version="0.2"
 
 COPY requirements.txt /tmp/
 RUN pip3 install --requirement /tmp/requirements.txt
