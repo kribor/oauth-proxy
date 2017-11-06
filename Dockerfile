@@ -1,11 +1,11 @@
-FROM fareoffice/python3
+FROM python:3-alpine
 
-LABEL com.oath-proxy.version="0.2"
+LABEL com.oauth-proxy.version="beta"
 
 COPY requirements.txt /tmp/
 RUN pip3 install --requirement /tmp/requirements.txt
-
-COPY . /code
+RUN mkdir /code
+COPY flask_oauth_proxy.py /code/
 WORKDIR /code
 
-CMD ["flask_oauth_proxy.py"]
+CMD ["python", "./flask_oauth_proxy.py"]
