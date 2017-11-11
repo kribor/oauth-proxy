@@ -26,8 +26,6 @@ def proxy(uri):
         if os.environ.get(setting):
             settings[setting] = os.environ[setting]
 
-        print ("%s: %s" % (setting, settings[setting]))
-
     target_url = "%s%s" % (settings['OAUTH_PROXY_BASE_URL'], uri)
 
     consumer_key = settings['OAUTH_PROXY_CONSUMER_KEY']
