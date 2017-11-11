@@ -1,3 +1,7 @@
+# docker pull python:3-alpine
+# docker build -t kribor/oauth-proxy:latest .
+# docker push kribor/oauth-proxy:latest
+
 FROM python:3-alpine
 
 LABEL com.oauth-proxy.version="beta"
