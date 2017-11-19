@@ -4,7 +4,7 @@
 
 FROM python:3-alpine
 
-LABEL com.oauth-proxy.version="beta"
+LABEL com.oauth-proxy.version="1.0"
 
 COPY requirements.txt /tmp/
 RUN pip3 install --requirement /tmp/requirements.txt
