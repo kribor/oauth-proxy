@@ -66,11 +66,19 @@ def proxy(uri):
             list = target
             map = {}
 
-            for item in list:
+            for index, item in enumerate(list, start=1):
 
-                map[item[rule_name_key]] = item
-                # Remove the name field to clean up
-                map[item[rule_name_key]].pop(rule_name_key)
+
+                if index == 1:
+                    map[item[rule_name_key]] = item
+
+                    # Remove the flattened field to clean up
+                    map[item[rule_name_key]].pop(rule_name_key)
+                else:
+                    map[item[rule_name_key] + str(index)] = item
+
+                    # Remove the flattened field to clean up
+                    map[item[rule_name_key] + str(index)].pop(rule_name_key)
 
             # Replace the list with the new map
             parent[last_key] = map
